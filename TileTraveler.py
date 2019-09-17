@@ -1,5 +1,5 @@
 #notum fall sem tekur inn x og y hnit notanda og skilar volmoguleikum
-def options(x ,y):
+def option(x ,y):
 	if x==1 and y==1:
 		return "NXXX"
 	if x==1 and y==2:
@@ -25,23 +25,23 @@ def print_options(options):
 	answer="You can travel: "
 	more_than_two=False
 	if options[0]!="X":
-		answer += "(N)orth "
+		answer += "(N)orth"
 		more_than_two=True
 	if options[1]!="X":
 		if more_than_two:
-			answer += "or "
+			answer += " or "
 		answer += "(E)ast"
 		more_than_two=True
 	if options[2]!="X":
-                if more_than_two:
-                        answer += "or "
-                answer += "(S)outh"
+		if more_than_two:
+			answer += " or "
+		answer += "(S)outh"
 		more_than_two=True
 	if options[3]!="X":
-                if more_than_two:
-                        answer += "or "
-                answer += "(W)ast"
-	print(answer)
+			if more_than_two:
+					answer += " or "
+			answer += "(W)est"
+	print(answer+".")
 
 x=1
 y=1
@@ -49,14 +49,14 @@ victory=False
 user_input=""
 #geymum x og y hnit notanda
 while victory!=True:
-	options=options(x,y)
+	options=option(x,y)
 	print_options(options)
 
 	user_input=input("Direction: ")
 	user_input=user_input.upper()
 	while not (user_input == options[0] or user_input == options[1] or user_input== options[2] or user_input == options[3]):
 		print("Not a valid direction!")
-		user_input=input("Directions: ")
+		user_input=input("Direction: ").upper()
 
 	if user_input == "N":
 		y+=1
